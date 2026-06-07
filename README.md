@@ -178,6 +178,7 @@ POST /api/customers
 ## 📄 License
 
 MIT License
+
 © 2026 Shigosag
 
 ---
