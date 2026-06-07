@@ -112,8 +112,8 @@ cd Business-Management-System
 ```bash
 cd backend
 npm install
-npm prisma generate
-npm prisma migrate dev
+npx prisma generate
+npx prisma migrate dev
 npm run dev
 ```
 
