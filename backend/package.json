@@ -1,0 +1,31 @@
+{
+  "name": "business-management-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "bcryptjs": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "^5.0.0",
+    "helmet": "latest",
+    "jsonwebtoken": "latest",
+    "morgan": "latest",
+    "express-rate-limit": "latest",
+    "winston": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "prisma": "^6.8.2",
+    "typescript": "latest",
+    "@types/node": "latest",
+    "tsx": "latest"
+  }
+}
