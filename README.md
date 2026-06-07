@@ -117,9 +117,7 @@ npm prisma migrate dev
 npm run dev
 ```
 
-```text
 Open: http://localhost:5000
-```
 
 ## Frontend Setup
 
@@ -130,9 +128,7 @@ npm install chart.js react-chartjs-2
 npm run dev
 ```
 
-```text
 Open: http://localhost:5173
-```
 
 ---
 
