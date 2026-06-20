@@ -97,6 +97,9 @@ Business-Management-System/
 
 ## 🚀 Installation
 
+## Prerequisites
+- Node.js (v18+)
+
 ### Clone Repository
 
 ```bash
