@@ -68,7 +68,7 @@ DATABASE_URL="your_neon_postgres_connection_string"
 
 ## 🗂️ Project Structure
 
-```text
+```txt
 Business-Management-System/
 │
 ├── frontend/
