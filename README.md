@@ -62,6 +62,7 @@ Add your connection string in `backend/.env`:
 
 ```text
 DATABASE_URL="your_neon_postgres_connection_string"
+```
 
 ---
 
