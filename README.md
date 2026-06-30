@@ -1,8 +1,8 @@
 # 🏢 Business Management System
 
-[![TypeScript](https://img.shields.io/badge/typescript-5.x-blue)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org/)
-[![Neon](https://img.shields.io/badge/Neon-Serverless%20Postgres-00E599)](https://neon.tech/)
+[![TypeScript](https://img.shields.io/badge/typescript-5.x-blue)](https://www.typescriptlang.org/)  
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green)](https://nodejs.org/)  
+[![Neon](https://img.shields.io/badge/Neon-Serverless%20Postgres-00E599)](https://neon.tech/)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A modern, professional, scalable, and production-inspired Business Management System built with React, TypeScript, Vite, Express, Prisma, and PostgreSQL.
