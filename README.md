@@ -9,8 +9,8 @@ A modern, professional, scalable, and production-inspired Business Management Sy
 
 **🚀 Powered by Shigosag**
 
-![BMS Dashboard](Screenshots/dashboard_light.png)
-![BMS Dashboard](Screenshots/dashboard_light2.png)
+![BMS Dashboard](screenshots/dashboard_light.png)
+![BMS Dashboard](screenshots/dashboard_light2.png)
 
 ### 🎥 System Walkthrough & Demo
 
@@ -122,11 +122,11 @@ Business-Management-System/
 
 | Light Mode Top Section | Dark Mode Top Section |
 | :---: | :---: |
-| ![Light Mode Dashboard](Screenshots/dashboard_light.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark.png) |
+| ![Light Mode Dashboard](screenshots/dashboard_light.png) | ![Dark Mode Dashboard](screenshots/dashboard_dark.png) |
 
 | Light Mode Bottom Section | Dark Mode Bottom Section |
 | :---: | :---: |
-| ![Light Mode Dashboard](Screenshots/dashboard_light2.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark2.png) |
+| ![Light Mode Dashboard](screenshots/dashboard_light2.png) | ![Dark Mode Dashboard](screenshots/dashboard_dark2.png) |
 
 ---
 
@@ -190,7 +190,7 @@ POST /api/customers
 
 | Light Mode Top Section | Dark Mode Top Section |
 | :---: | :---: |
-| ![Light Mode Dashboard](Screenshots/dashboard_light_mobile.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark_mobile.png) |
+| ![Light Mode Dashboard](screenshots/dashboard_light_mobile.png) | ![Dark Mode Dashboard](screenshots/dashboard_dark_mobile.png) |
 
 ---
 
