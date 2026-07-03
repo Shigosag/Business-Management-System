@@ -9,6 +9,23 @@ A modern, professional, scalable, and production-inspired Business Management Sy
 
 **🚀 Powered by Shigosag**
 
+![BMS Dashboard](Screenshots/dashboard_light.png)
+![BMS Dashboard](Screenshots/dashboard_light2.png)
+
+### 🎥 System Walkthrough & Demo
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/4f2b9343-20fd-4a60-b78f-5a94bee6185a" width="100%" controls></video>
+</div>
+
+**Timestamps:**
+- **0:00** - Executable Launch & Authentication
+- **0:17** - Nexus Command Center (Analytics)
+- **0:42** - Sales & Inventory Modules
+- **0:53** - HR & CRM Modules
+- **1:03** - Finance & Settings
+- **1:15** - GitHub Repository Overview
+  
 ---
 
 ## ✨ Features
@@ -99,6 +116,18 @@ Business-Management-System/
 └── README.md
 ```
 
+----
+
+## 🖼️ Dashboard Preview
+
+| Light Mode Top Section | Dark Mode Top Section |
+| :---: | :---: |
+| ![Light Mode Dashboard](Screenshots/dashboard_light.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark.png) |
+
+| Light Mode Bottom Section | Dark Mode Bottom Section |
+| :---: | :---: |
+| ![Light Mode Dashboard](Screenshots/dashboard_light2.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark2.png) |
+
 ---
 
 ## 🚀 Installation
@@ -154,6 +183,14 @@ GET /api/customers
 ```http
 POST /api/customers
 ```
+
+---
+
+## 🖼️ Dashboard Mobile Preview
+
+| Light Mode Top Section | Dark Mode Top Section |
+| :---: | :---: |
+| ![Light Mode Dashboard](Screenshots/dashboard_light_mobile.png) | ![Dark Mode Dashboard](Screenshots/dashboard_dark_mobile.png) |
 
 ---
 
