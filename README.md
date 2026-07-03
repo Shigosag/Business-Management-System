@@ -19,12 +19,11 @@ A modern, professional, scalable, and production-inspired Business Management Sy
 </div>
 
 **Timestamps:**
-- **0:00** - Executable Launch & Authentication
-- **0:17** - Nexus Command Center (Analytics)
-- **0:42** - Sales & Inventory Modules
-- **0:53** - HR & CRM Modules
-- **1:03** - Finance & Settings
-- **1:15** - GitHub Repository Overview
+- **0:00** - BMS Refresh & Loading
+- **0:10** - Dashboard Light Mode Overview
+- **0:21** - Dashboard Dark Mode Overview
+- **0:36** - Menu Overview
+- **0:50** - GitHub Repository Overview
   
 ---
 
