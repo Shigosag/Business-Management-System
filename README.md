@@ -7,6 +7,15 @@
 
 A modern, professional, scalable, and production-inspired Business Management System built with React, TypeScript, Vite, Express, Prisma, and PostgreSQL.
 
+---
+
+## 🌐 Live Demo
+
+🚀 **Try Business Management System:**  
+https://business-management-system.up.railway.app
+
+---
+
 **🚀 Powered by Shigosag**
 
 ![BMS Dashboard](screenshots/dashboard_light.png)
