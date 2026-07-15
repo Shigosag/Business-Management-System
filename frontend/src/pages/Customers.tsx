@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../api/client";
+import { api } from "../api/Client";
 
 export default function Customers() {
   const [data, setData] = useState<any[]>([]);
