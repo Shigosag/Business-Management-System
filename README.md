@@ -11,7 +11,7 @@ A modern, professional, scalable, and production-inspired Business Management Sy
 
 ## 🌐 Live Demo
 
-🚀 **Try Business Management System:**  
+🚀 **Visit Business Management System:**  
 https://business-management-system.up.railway.app
 
 ---
