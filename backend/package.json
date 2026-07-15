@@ -26,6 +26,9 @@
     "prisma": "^6.8.2",
     "typescript": "latest",
     "@types/node": "latest",
+    "@types/express": "latest",
+    "@types/cors": "latest",
+    "@types/morgan": "latest",
     "tsx": "latest"
   }
 }
