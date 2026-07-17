@@ -4,7 +4,7 @@ export default function Navbar({
   onToggleSidebar: () => void;
 }) {
   return (
-    <div className="flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 shadow">
+    <div className="sticky top-0 z-50 flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-800 shadow">
       <h1 className="font-bold text-xl text-red-500">
         Shigosag BMS
       </h1>
