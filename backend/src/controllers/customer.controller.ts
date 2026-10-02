@@ -1,15 +1,18 @@
 import { Request, Response, NextFunction } from "express";
-import { CustomerService } from "../services/customer.service";
-import { CustomerStatus } from "@prisma/client";
+import { CustomerService, CustomerStatus } from "../services/customer.service";
+
+const getParamId = (req: Request): string => {
+  return Array.isArray(req.params.id) ? req.params.id[0] : String(req.params.id);
+};
 
 export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const { search, status, page, limit } = req.query;
+    const validStatus = status === "ACTIVE" || status === "INACTIVE" ? (status as CustomerStatus) : undefined;
+
     const result = await CustomerService.getAll({
       search: search ? String(search) : undefined,
-      status: status && Object.values(CustomerStatus).includes(status as CustomerStatus)
-        ? (status as CustomerStatus)
-        : undefined,
+      status: validStatus,
       page: page ? Number(page) : 1,
       limit: limit ? Number(limit) : 50,
     });
@@ -21,7 +24,8 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
 
 export const getCustomerById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const customer = await CustomerService.getById(req.params.id);
+    const id = getParamId(req);
+    const customer = await CustomerService.getById(id);
     if (!customer) {
       res.status(404).json({ message: "Customer not found" });
       return;
@@ -43,12 +47,13 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
 
 export const updateCustomer = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const existing = await CustomerService.getById(req.params.id);
+    const id = getParamId(req);
+    const existing = await CustomerService.getById(id);
     if (!existing) {
       res.status(404).json({ message: "Customer not found" });
       return;
     }
-    const customer = await CustomerService.update(req.params.id, req.body);
+    const customer = await CustomerService.update(id, req.body);
     res.json(customer);
   } catch (error) {
     next(error);
@@ -57,13 +62,14 @@ export const updateCustomer = async (req: Request, res: Response, next: NextFunc
 
 export const deleteCustomer = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const existing = await CustomerService.getById(req.params.id);
+    const id = getParamId(req);
+    const existing = await CustomerService.getById(id);
     if (!existing) {
       res.status(404).json({ message: "Customer not found" });
       return;
     }
-    await CustomerService.softDelete(req.params.id);
-    res.json({ message: "Customer successfully archived/deleted", id: req.params.id });
+    await CustomerService.softDelete(id);
+    res.json({ message: "Customer successfully archived/deleted", id });
   } catch (error) {
     next(error);
   }
