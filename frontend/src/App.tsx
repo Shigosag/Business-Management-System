@@ -3,42 +3,37 @@ import Splash from "./pages/Splash";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Sidebar from "./components/Sidebar";
-import DarkModeToggle from "./components/DarkModeToggle";
+import Navbar from "./components/Navbar";
+import { ToastProvider } from "./components/Toast";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [page, setPage] = useState<"dashboard" | "customers">("dashboard");
-  const [sidebarOpen, setSidebarOpen] = useState(false); // collapsed by default
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   if (!loaded) return <Splash onFinish={() => setLoaded(true)} />;
 
   return (
-    <div className="flex min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
-      {/* SIDEBAR */}
-      <div
-        className={`bg-black text-white transition-all duration-300 overflow-hidden ${
-          sidebarOpen ? "w-64" : "w-0"
-        }`}
-      >
-        <Sidebar onNavigate={(p: "dashboard" | "customers") => setPage(p)} />
-      </div>
+    <ToastProvider>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex flex-col font-sans transition-colors duration-200">
+        {/* SIDEBAR NAVIGATION DRAWER */}
+        <Sidebar
+          currentPage={page}
+          onNavigate={(p) => setPage(p)}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
 
-      {/* MAIN CONTENT */}
-      <div className="flex-1 p-6">
-        <div className="flex justify-between mb-4">
-          <button
-            className="px-3 py-1 bg-red-500 text-white rounded"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            ☰ Menu
-          </button>
+        {/* MAIN APPLICATION CONTAINER */}
+        <div className="flex-1 flex flex-col lg:pl-64 transition-all duration-300">
+          <Navbar onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
 
-          <DarkModeToggle />
+          <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+            {page === "dashboard" && <Dashboard />}
+            {page === "customers" && <Customers />}
+          </main>
         </div>
-
-        {page === "dashboard" && <Dashboard />}
-        {page === "customers" && <Customers />}
       </div>
-    </div>
+    </ToastProvider>
   );
 }

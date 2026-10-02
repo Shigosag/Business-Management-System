@@ -14,35 +14,57 @@ model User {
   password  String
   role      Role     @default(STAFF)
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
 }
 
 model Customer {
-  id        String   @id @default(uuid())
+  id        String         @id @default(uuid())
   name      String
   email     String?
   phone     String?
-  createdAt DateTime @default(now())
+  status    CustomerStatus @default(ACTIVE)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  deletedAt DateTime?
+  invoices  Invoice[]
+
+  @@index([name])
+  @@index([status])
+  @@index([deletedAt])
 }
 
 model Product {
   id        String   @id @default(uuid())
   name      String
-  price     Decimal
-  stock     Int
+  price     Decimal  @db.Decimal(12, 2)
+  stock     Int      @default(0)
   createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Invoice {
-  id         String   @id @default(uuid())
+  id         String        @id @default(uuid())
   customerId String
-  total      Decimal
-  status     InvoiceStatus
-  createdAt  DateTime @default(now())
+  customer   Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  total      Decimal       @db.Decimal(12, 2)
+  status     InvoiceStatus @default(PENDING)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@index([customerId])
+  @@index([status])
 }
 
 enum Role {
   ADMIN
   STAFF
+}
+
+enum CustomerStatus {
+  ACTIVE
+  INACTIVE
 }
 
 enum InvoiceStatus {
