@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
@@ -23,7 +24,12 @@ app.use(
   })
 );
 
-app.use(helmet());
+// Helmet configured so React scripts and charts load without CSP blocking
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 const morganStream = {
   write: (message: string) => {
@@ -37,31 +43,41 @@ const apiLimiter = rateLimit({
   max: 200,
   standardHeaders: true,
   legacyHeaders: false,
-  message: {
-    status: "error",
-    message: "Too many requests from this IP, please try again after 15 minutes.",
-  },
 });
 app.use("/api", apiLimiter);
 
-app.get("/", (_, res) => {
+// API Health Check
+app.get("/api/health", (_, res) => {
   res.json({
     app: "Business Management System",
     author: "Shigosag",
-    poweredBy: "Shigosag",
     status: "healthy",
     timestamp: new Date().toISOString(),
   });
 });
 
+// API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
-app.use((req, res) => {
-  res.status(404).json({
-    status: "fail",
-    message: `Endpoint ${req.method} ${req.originalUrl} not found.`,
+// --- SERVE FRONTEND (React SPA) ---
+const frontendDistPath = path.join(__dirname, "../../frontend/dist");
+
+app.use(express.static(frontendDistPath));
+
+app.get("*", (req, res, next) => {
+  // If the request starts with /api and did not match any route, return 404 JSON
+  if (req.path.startsWith("/api")) {
+    res.status(404).json({
+      status: "fail",
+      message: `API endpoint ${req.method} ${req.originalUrl} not found.`,
+    });
+    return;
+  }
+  // Otherwise, serve the React frontend index.html
+  res.sendFile(path.join(frontendDistPath, "index.html"), (err) => {
+    if (err) next(err);
   });
 });
 
