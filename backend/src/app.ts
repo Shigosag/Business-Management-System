@@ -24,7 +24,6 @@ app.use(
   })
 );
 
-// Helmet configured so React scripts and charts load without CSP blocking
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -66,8 +65,8 @@ const frontendDistPath = path.join(__dirname, "../../frontend/dist");
 
 app.use(express.static(frontendDistPath));
 
-app.get("*", (req, res, next) => {
-  // If the request starts with /api and did not match any route, return 404 JSON
+// Express 5 catch-all syntax: '{*splat}' instead of '*'
+app.get("/{*splat}", (req, res, next) => {
   if (req.path.startsWith("/api")) {
     res.status(404).json({
       status: "fail",
@@ -75,7 +74,6 @@ app.get("*", (req, res, next) => {
     });
     return;
   }
-  // Otherwise, serve the React frontend index.html
   res.sendFile(path.join(frontendDistPath, "index.html"), (err) => {
     if (err) next(err);
   });
