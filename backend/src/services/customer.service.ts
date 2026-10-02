@@ -1,5 +1,6 @@
 import { prisma } from "../config/db";
-import { CustomerStatus } from "@prisma/client";
+
+export type CustomerStatus = "ACTIVE" | "INACTIVE";
 
 interface CustomerQueryOptions {
   search?: string;
@@ -81,7 +82,7 @@ export const CustomerService = {
   async softDelete(id: string) {
     return prisma.customer.update({
       where: { id },
-      data: { deletedAt: new Date(), status: CustomerStatus.INACTIVE },
+      data: { deletedAt: new Date(), status: "INACTIVE" },
     });
   },
 };
