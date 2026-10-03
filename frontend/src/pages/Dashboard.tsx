@@ -35,12 +35,14 @@ export default function Dashboard() {
     return (
       <div className="space-y-6 animate-pulse">
         <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-48 mb-6" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* 4 Skeleton Cards: 2x2 on mobile, 1x4 on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+          <div className="h-32 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
           <div className="h-32 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
           <div className="h-32 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
           <div className="h-32 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="h-80 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
           <div className="h-80 bg-gray-200 dark:bg-gray-800 rounded-2xl" />
         </div>
@@ -85,8 +87,8 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* KPI METRIC CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {/* BALANCED 4-CARD KPI GRID: 2x2 on mobile, 1x4 on desktop */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         <Card
           title="Total Customers"
           value={metrics.totalCustomers.toLocaleString()}
@@ -103,6 +105,12 @@ export default function Dashboard() {
           title="Orders Completed"
           value={metrics.ordersCount.toLocaleString()}
           subtitle="Fulfillment rate 98.4%"
+        />
+        <Card
+          title="Active Invoices"
+          value="18"
+          subtitle="3 pending approval"
+          badge="94% paid"
         />
       </div>
 
