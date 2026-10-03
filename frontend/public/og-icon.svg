@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bmsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#ef4444" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background Dark Rounded Canvas -->
+  <rect width="512" height="512" rx="110" fill="#090d16" />
+
+  <!-- Glowing Emblem Background -->
+  <rect x="96" y="96" width="320" height="320" rx="72" fill="url(#bmsGrad)" filter="url(#shadow)" />
+
+  <!-- Monogram "B" & Dashboard Bars -->
+  <!-- Letter B Base -->
+  <path d="M192 168 H 262 C 290 168, 308 182, 308 206 C 308 222, 298 235, 282 242 C 304 250, 318 266, 318 294 C 318 322, 294 344, 260 344 H 192 V 168 Z M 232 204 V 238 H 258 C 272 238, 278 230, 278 221 C 278 212, 272 204, 258 204 H 232 Z M 232 274 V 308 H 262 C 276 308, 286 300, 286 291 C 286 282, 276 274, 262 274 H 232 Z" fill="#ffffff" />
+</svg>
