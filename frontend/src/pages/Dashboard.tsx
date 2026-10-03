@@ -93,7 +93,7 @@ export default function Dashboard() {
           title="Total Customers"
           value={metrics.totalCustomers.toLocaleString()}
           subtitle={`${metrics.activeCustomers} currently active`}
-          badge="+12% this month"
+          badge="+12%"
         />
         <Card
           title="Gross Revenue"
@@ -110,7 +110,7 @@ export default function Dashboard() {
           title="Active Invoices"
           value="18"
           subtitle="3 pending approval"
-          badge="94% paid"
+          badge="94%"
         />
       </div>
 
