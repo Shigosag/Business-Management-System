@@ -90,7 +90,7 @@ export default function Dashboard() {
       {/* BALANCED 4-CARD KPI GRID: 2x2 on mobile, 1x4 on desktop */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         <Card
-          title="Total Customers"
+          title="Customers"
           value={metrics.totalCustomers.toLocaleString()}
           subtitle={`${metrics.activeCustomers} currently active`}
           badge="+12%"
