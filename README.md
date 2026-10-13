@@ -98,6 +98,8 @@ DATABASE_URL="your_neon_postgres_connection_string"
 
 ## 🗂️ Project Structure
 
+[![Architecture Diagram](https://img.shields.io/badge/View-GitDiagram-blue)](https://gitdiagram.com/Shigosag/Business-Management-System)
+
 ```txt
 Business-Management-System/
 │
